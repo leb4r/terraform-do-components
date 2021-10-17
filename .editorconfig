@@ -1,0 +1,27 @@
+# top-most EditorConfig file
+root = true
+
+# unix-style newlines with a newline ending every file
+[*]
+end_of_line          = lf
+insert_final_newline = true
+
+# make
+[{Makefile, Makefile.*, makefile, GNUmakefile}]
+indent_style = tab
+indent_size  = 4
+
+# shell
+[{shell,*.sh,*.bats}]
+indent_style = tab
+indent_size  = 4
+
+# terraform/hcl
+[*.{tf,tfvars,tpl,hcl}]
+indent_style = space
+indent_size  = 2
+
+# yaml
+[*.{yml,yaml}]
+indent_style = space
+indent_size  = 2
