@@ -1,0 +1,96 @@
+# Create default rules for monitoring the cluster
+#
+# Disable `etcd` and `kubeScheduler` rules (managed by DOKS, so metrics are not accesible)
+defaultRules:
+  create: true
+  rules:
+    alertmanager: true
+    etcd: false
+    general: true
+    k8s: true
+    kubeApiserver: true
+    kubeApiserverAvailability: true
+    kubeApiserverError: true
+    kubeApiserverSlos: true
+    kubelet: true
+    kubePrometheusGeneral: true
+    kubePrometheusNodeAlerting: true
+    kubePrometheusNodeRecording: true
+    kubernetesAbsent: true
+    kubernetesApps: true
+    kubernetesResources: true
+    kubernetesStorage: true
+    kubernetesSystem: true
+    kubeScheduler: false
+    kubeStateMetrics: true
+    network: true
+    node: true
+    prometheus: true
+    prometheusOperator: true
+    time: true
+
+## Component scraping kube scheduler
+##
+# Disabled because it's being managed by DOKS, so it's not accessible
+kubeScheduler:
+  enabled: false
+
+## Component scraping etcd
+##
+# Disabled because it's being managed by DOKS, so it's not accessible
+kubeEtcd:
+  enabled: false
+
+## Configuration for alertmanager
+## ref: https://prometheus.io/docs/alerting/alertmanager/
+##
+alertmanager:
+  ## Deploy alertmanager
+  ##
+  enabled: true
+
+## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+##
+grafana:
+  enabled: true
+  adminPassword: prom-operator # Please change the default password in production !!!
+
+## Manages Prometheus and Alertmanager components
+##
+prometheusOperator:
+  enabled: true
+
+## Deploy a Prometheus instance
+##
+prometheus:
+  enabled: true
+
+  # Starter Kit setup for the Ambassador Service monitoring
+  #
+  # additionalServiceMonitors:
+  #   - name: "ambassador-monitor"
+  #     selector:
+  #       matchLabels:
+  #         service: "ambassador-admin"
+  #     namespaceSelector:
+  #       matchNames:
+  #         - ambassador
+  #     endpoints:
+  #       - port: "ambassador-admin"
+  #         path: /metrics
+  #         scheme: http
+
+  ## Prometheus StorageSpec for persistent data
+  ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md
+  ##
+  # Starter Kit setup for DigitalOcean Block Storage
+  #
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: do-block-storage
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 5Gi
