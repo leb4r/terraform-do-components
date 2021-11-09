@@ -10,7 +10,7 @@ Any of the modules can be used in other projects like such:
 
 ```hcl
 module "doks_cluster" {
-  source       = "git::https://github.com/leb4r/terraform-do-components//doks-cluster?ref=main"
+  source       = "git::https://github.com/leb4r/terraform-do-components.git//doks-cluster?ref=main"
   cluster_name = "example-cluster"
 }
 ```
