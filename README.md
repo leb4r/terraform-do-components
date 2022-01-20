@@ -6,11 +6,13 @@ Terraform templates that can be re-used in other projects. Built specifically fo
 
 ## Usage
 
-Any of the modules can be used in other projects like such:
+[Reference the submodules](https://www.terraform.io/language/modules/sources#modules-in-package-sub-directories) like such:
 
 ```hcl
 module "doks_cluster" {
-  source       = "git::https://github.com/leb4r/terraform-do-components.git//doks-cluster?ref=main"
+  source       = "leb4r/components/do//modules/doks-cluster"
+  version      = "0.1.0"
+
   cluster_name = "example-cluster"
 }
 ```
