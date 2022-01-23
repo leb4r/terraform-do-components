@@ -22,3 +22,9 @@ module "doks_cluster" {
 ### DigitalOcean Authentication
 
 None of the modules explicitly refer to a DigitalOcean API token. This is meant to force the usage of environment variables (e.g. `DIGITALOCEAN_ACCESS_TOKEN`) when passing authentication details to the provider. See the [provider documentation](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs#token) for which environment variables are valid.
+
+### Experimental Features
+
+The following components are using experimental features:
+
+- [domain](./components/domain/README.md)
