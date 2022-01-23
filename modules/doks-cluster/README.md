@@ -30,7 +30,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The canonical name of the Kubernetes cluster | `string` | n/a | yes |
-| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | The version of Kubernetes to deploy | `string` | `"1.21.3-do.0"` | no |
+| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | The version of Kubernetes to deploy | `string` | `"1.21.5-do.0"` | no |
 | <a name="input_ha"></a> [ha](#input\_ha) | Set to `true` to deploy an HA Control Plane | `bool` | `false` | no |
 | <a name="input_max_nodes"></a> [max\_nodes](#input\_max\_nodes) | The maximum number of workers in the node pool | `number` | `3` | no |
 | <a name="input_min_nodes"></a> [min\_nodes](#input\_min\_nodes) | The minimum number of workers in the node pool | `number` | `1` | no |
