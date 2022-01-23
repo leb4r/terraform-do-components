@@ -1,4 +1,14 @@
 output "domain_name" {
-  description = "Name of teh Domain that was associated with DigitalOcean"
+  description = "Name of the Domain that is being managed by this component"
   value       = digitalocean_domain.this.name
+}
+
+output "id" {
+  description = "ID of the Domain that is being managed by this component"
+  value       = digitalocean_domain.this.name
+}
+
+output "records" {
+  description = "List of records that are being managed by this componenet"
+  value       = digitalocean_record.this[*]
 }
