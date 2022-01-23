@@ -2,6 +2,11 @@ variable "environment" {
   description = "The environment of the project (e.g. `Development`, `Staging`, or `Production`)"
   type        = string
   default     = "Development"
+
+  validation {
+    condition     = contains(["Development", "Staging", "Production"], var.environment)
+    error_message = "Error: `environment` must be either `Development`, `Staging` or `Production`."
+  }
 }
 
 variable "description" {
