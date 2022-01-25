@@ -1,6 +1,6 @@
 resource "digitalocean_vpc" "this" {
-  name        = var.vpc_name
-  description = var.vpc_description
+  name        = var.name
+  description = var.description
   region      = var.region
   ip_range    = var.ip_range
 

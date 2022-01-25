@@ -1,22 +1,26 @@
-variable "region" {
-  description = "The DigitalOcean region to deploy resources to"
+variable "description" {
+  description = "A free-form text field up to a limit of 255 characters to describe the VPC"
   type        = string
-  default     = "nyc3"
+  default     = "Managed by Terraform"
 }
 
 variable "ip_range" {
-  description = "The CIDR of the VPC"
+  description = <<-EOT
+    The range of IP addresses for the VPC in CIDR notation.
+    Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918.
+    It may not be larger than /16 or smaller than /24
+  EOT
   type        = string
   default     = "10.10.10.0/24"
 }
 
-variable "vpc_name" {
-  description = "Name to give VPC, if not set `project_name` will be used, if `project_name` is not set, it will use `domain_name`"
+variable "name" {
+  description = "A name for the VPC. Must be unique and contain alphanumeric characters, dashes, and periods only. If not set `project_name` will be used"
   type        = string
 }
 
-variable "vpc_description" {
-  description = "Canonical description to give the the VPC"
+variable "region" {
+  description = "The DigitalOcean region slug for the VPC's location"
   type        = string
-  default     = "Managed by Terraform"
+  default     = "nyc3"
 }
