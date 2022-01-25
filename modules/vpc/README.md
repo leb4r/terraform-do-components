@@ -37,5 +37,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | ID of the VPC that was created |
+| <a name="output_created_at"></a> [created\_at](#output\_created\_at) | The date and time of when the VPC was created |
+| <a name="output_default"></a> [default](#output\_default) | A boolean indicating whether or not the VPC is the default for the region |
+| <a name="output_id"></a> [id](#output\_id) | The unique identifier for the VPC |
+| <a name="output_urn"></a> [urn](#output\_urn) | The uniform resource name (URN) for the VPC |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
