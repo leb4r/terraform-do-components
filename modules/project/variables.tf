@@ -1,5 +1,11 @@
+variable "description" {
+  description = "The description of the project"
+  type        = string
+  default     = "Managed by Terraform"
+}
+
 variable "environment" {
-  description = "The environment of the project (e.g. `Development`, `Staging`, or `Production`)"
+  description = "The environment of the project"
   type        = string
   default     = "Development"
 
@@ -9,14 +15,8 @@ variable "environment" {
   }
 }
 
-variable "description" {
-  description = "A description to give to the project"
-  type        = string
-  default     = "Managed by Terraform"
-}
-
 variable "name" {
-  description = "The canonical name to give to the project"
+  description = "The name of the project"
   type        = string
 }
 
