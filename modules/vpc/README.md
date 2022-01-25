@@ -28,10 +28,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ip_range"></a> [ip\_range](#input\_ip\_range) | The CIDR of the VPC | `string` | `"10.10.10.0/24"` | no |
-| <a name="input_region"></a> [region](#input\_region) | The DigitalOcean region to deploy resources to | `string` | `"nyc3"` | no |
-| <a name="input_vpc_description"></a> [vpc\_description](#input\_vpc\_description) | Canonical description to give the the VPC | `string` | `"Managed by Terraform"` | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name to give VPC, if not set `project_name` will be used, if `project_name` is not set, it will use `domain_name` | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | A free-form text field up to a limit of 255 characters to describe the VPC | `string` | `"Managed by Terraform"` | no |
+| <a name="input_ip_range"></a> [ip\_range](#input\_ip\_range) | The range of IP addresses for the VPC in CIDR notation.<br>Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918.<br>It may not be larger than /16 or smaller than /24 | `string` | `"10.10.10.0/24"` | no |
+| <a name="input_name"></a> [name](#input\_name) | A name for the VPC. Must be unique and contain alphanumeric characters, dashes, and periods only. If not set `project_name` will be used | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The DigitalOcean region slug for the VPC's location | `string` | `"nyc3"` | no |
 
 ## Outputs
 
