@@ -6,7 +6,6 @@ variable "cluster_name" {
 variable "cluster_version" {
   description = "The version of Kubernetes to deploy"
   type        = string
-  default     = "1.21.5-do.0"
 }
 
 variable "ha" {
