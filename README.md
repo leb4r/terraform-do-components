@@ -2,7 +2,7 @@
 
 [![checkov](https://github.com/leb4r/terraform-do-components/actions/workflows/checkov.yml/badge.svg)](https://github.com/leb4r/terraform-do-components/actions/workflows/checkov.yml) [![pre-commit](https://github.com/leb4r/terraform-do-components/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/leb4r/terraform-do-components/actions/workflows/pre-commit.yml)
 
-Terraform templates that can be re-used in other projects. Built specifically for DigitalOcean.
+Terraform modules that can be re-used in other projects. Built specifically for [DigitalOcean].
 
 ## Usage
 
@@ -27,4 +27,8 @@ None of the modules explicitly refer to a DigitalOcean API token. This is meant 
 
 The following components are using experimental features:
 
-- [domain](./components/domain/README.md)
+- [domain](./modules/domain/README.md)
+- [load-balancer](./modules/load-balancer/README.md)
+
+<!-- references -->
+[DigitalOcean]: <https://www.digitalocean.com>
