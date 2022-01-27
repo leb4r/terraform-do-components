@@ -1,3 +1,5 @@
+region = "sfo3"
+
 forwarding_rules = [
   {
     entry_port      = 80,
