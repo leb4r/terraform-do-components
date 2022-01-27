@@ -10,7 +10,7 @@ import (
 )
 
 func TestCertificateComponent(t *testing.T) {
-	t.Skip("Need solution for using an example")
+	t.Skip("revisit once examples are implemted")
 	t.Parallel()
 
 	rand.Seed(time.Now().UnixNano())
