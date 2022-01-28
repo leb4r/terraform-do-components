@@ -7,18 +7,17 @@ import (
 	"gotest.tools/assert"
 )
 
-func TestDropletComponent(t *testing.T) {
-	t.Skip("revisit once examples are implemented")
+func TestDoksClusterComponent(t *testing.T) {
 	t.Parallel()
 
 	randID := RandStringRunes(6)
 
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../modules/droplet",
+		TerraformDir: "../modules/doks-cluster",
 		Upgrade:      true,
 
 		VarFiles: []string{
-			GetComponentFixtures("droplet"),
+			GetComponentFixtures("doks-cluster"),
 		},
 
 		Vars: map[string]interface{}{
@@ -31,17 +30,13 @@ func TestDropletComponent(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// verify outputs
-	// expected values are defined in fixtures/droplet.tfvars
-	expectedRegion := "sfo3"
+	// expected values are defined in fixtures/load-balancer.tfvars
+	expectedRegion := "nyc3"
 	expectedName := randID
-	expectedImage := "fedora-35-x64"
 
 	resultRegion := terraform.Output(t, terraformOptions, "region")
 	assert.Equal(t, expectedRegion, resultRegion)
 
 	resultName := terraform.Output(t, terraformOptions, "name")
 	assert.Equal(t, expectedName, resultName)
-
-	resultImage := terraform.Output(t, terraformOptions, "image")
-	assert.Equal(t, expectedImage, resultImage)
 }
