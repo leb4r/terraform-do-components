@@ -1,10 +1,7 @@
 package test
 
 import (
-	"math/rand"
-	"strconv"
 	"testing"
-	"time"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"gotest.tools/assert"
@@ -21,8 +18,7 @@ type RecordAttributes struct {
 func TestDomainComponent(t *testing.T) {
 	t.Parallel()
 
-	rand.Seed(time.Now().UnixNano())
-	randID := strconv.Itoa(rand.Intn(100000) + 1000)
+	randID := RandStringRunes(6)
 
 	expectedDomainName := randID + ".io"
 	expectedRecordList := []map[string]interface{}{

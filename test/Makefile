@@ -1,5 +1,7 @@
-.PHONY: test
+.PHONY: deps test
 
-test:
+deps:
 	go mod download
+
+test: deps
 	go test -v -timeout 60m -run ./...

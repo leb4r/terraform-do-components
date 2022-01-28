@@ -1,10 +1,7 @@
 package test
 
 import (
-	"math/rand"
-	"strconv"
 	"testing"
-	"time"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"gotest.tools/assert"
@@ -13,8 +10,7 @@ import (
 func TestLoadBalancerComponent(t *testing.T) {
 	t.Parallel()
 
-	rand.Seed(time.Now().UnixNano())
-	randID := strconv.Itoa(rand.Intn(100000) + 1000)
+	randID := RandStringRunes(6)
 
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../modules/load-balancer",
@@ -34,7 +30,7 @@ func TestLoadBalancerComponent(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// verify outputs
-	// expected values are defined in fixtures/load-balancer.tfvars
+	// expected values are defined in fixtures/doks-cluster.tfvars
 	expectedRegion := "sfo1"
 	expectedName := randID
 

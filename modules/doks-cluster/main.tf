@@ -1,16 +1,33 @@
+data "digitalocean_kubernetes_versions" "this" {
+  version_prefix = var.version_prefix
+}
+
 resource "digitalocean_kubernetes_cluster" "this" {
-  name     = var.cluster_name
-  region   = var.region
-  version  = var.cluster_version
-  vpc_uuid = var.vpc_id
-  ha       = var.ha
+  name          = var.name
+  region        = var.region
+  version       = data.digitalocean_kubernetes_versions.this.latest_version
+  vpc_uuid      = var.vpc_uuid
+  ha            = var.ha
+  auto_upgrade  = var.auto_upgrade
+  surge_upgrade = var.surge_upgrade
+  tags          = var.tags
+
+  dynamic "maintenance_policy" {
+    for_each = var.maintenance_policy != null ? [var.maintenance_policy] : []
+
+    content {
+      day        = maintenance_policy.value.day
+      start_time = maintenance_policy.value.start_time
+    }
+  }
 
   node_pool {
-    name       = "${var.cluster_name}-default-node-pool"
-    size       = var.node_size
-    auto_scale = true
-    min_nodes  = var.min_nodes
-    max_nodes  = var.max_nodes
+    name       = "${var.name}-default-node-pool"
+    size       = var.default_node_pool["size"]
+    node_count = try(var.default_node_pool["node_count"], null)
+    auto_scale = try(var.default_node_pool["auto_scale"], null)
+    min_nodes  = try(var.default_node_pool["min_nodes"], null)
+    max_nodes  = try(var.default_node_pool["max_nodes"], null)
   }
 }
 
