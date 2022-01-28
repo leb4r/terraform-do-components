@@ -27,6 +27,7 @@ None of the modules explicitly refer to a DigitalOcean API token. This is meant 
 
 The following components are using experimental features:
 
+- [doks-cluster](./modules/doks-cluster/README.md)
 - [domain](./modules/domain/README.md)
 - [load-balancer](./modules/load-balancer/README.md)
 
