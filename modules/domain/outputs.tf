@@ -10,5 +10,7 @@ output "id" {
 
 output "records" {
   description = "List of records that are being managed by this componenet"
-  value       = digitalocean_record.this[*]
+  value = [
+    for record in digitalocean_record.this : record
+  ]
 }
