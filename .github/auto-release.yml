@@ -48,4 +48,4 @@ replacers:
     replace: ""
   # Remove Renovate bot banner image
   - search: '/\[!\[[^\]]*Renovate\][^\]]*\](\([^)]*\))?\s*\n+/gm'
-replace: ""
+    replace: ""
