@@ -1,7 +1,7 @@
 variable "auto_upgrade" {
   description = "A boolean value indicating whether the cluster will be automatically upgraded to new patch releases during it's maintenance window"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "ha" {
@@ -22,7 +22,10 @@ variable "maintenance_policy" {
     day        = string,
     start_time = string,
   })
-  default = null
+  default = {
+    day        = "sunday",
+    start_time = "04:00"
+  }
 }
 
 variable "default_node_pool" {
