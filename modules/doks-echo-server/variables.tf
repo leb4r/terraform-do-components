@@ -1,7 +1,7 @@
 variable "chart_version" {
   description = "The version of the Helm Chart that installs kube-prometheus-stack"
   type        = string
-  default     = "0.1.0"
+  default     = "0.2.0"
 }
 
 variable "cluster_name" {

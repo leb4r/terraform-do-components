@@ -33,7 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | The version of the Helm Chart that installs kube-prometheus-stack | `string` | `"0.1.0"` | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | The version of the Helm Chart that installs kube-prometheus-stack | `string` | `"0.2.0"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Canonical name of DOKS Cluster to deploy `echo-server` to, used to fetch authentication data for provider | `string` | n/a | yes |
 | <a name="input_create_namespace"></a> [create\_namespace](#input\_create\_namespace) | Set to `false` to use an existing namespace | `bool` | `true` | no |
 | <a name="input_helm_atomic"></a> [helm\_atomic](#input\_helm\_atomic) | If set, installation process purges chart on fail. The wait flag will be set automatically if atomic is used | `bool` | `true` | no |
