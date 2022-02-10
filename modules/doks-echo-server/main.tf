@@ -19,4 +19,10 @@ resource "helm_release" "echo_server" {
   atomic  = var.helm_atomic
   wait    = var.helm_wait
   timeout = var.helm_timeout
+
+
+  set {
+    name  = "ingress.enabled"
+    value = tostring(var.ingress_enabled)
+  }
 }

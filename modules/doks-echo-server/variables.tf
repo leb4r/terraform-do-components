@@ -33,6 +33,12 @@ variable "helm_wait" {
   default     = true
 }
 
+variable "ingress_enabled" {
+  description = "Whether or not to create an Ingress object"
+  type        = bool
+  default     = true
+}
+
 variable "namespace" {
   description = "Kubernetes Namespace to deploy `echo-server` in"
   type        = string
