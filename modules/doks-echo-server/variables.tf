@@ -1,5 +1,5 @@
 variable "chart_version" {
-  description = "The version of the Helm Chart that installs kube-prometheus-stack"
+  description = "The version of the `echo-server` Helm Chart to install"
   type        = string
   default     = "0.2.0"
 }
@@ -43,10 +43,4 @@ variable "namespace" {
   description = "Kubernetes Namespace to deploy `echo-server` in"
   type        = string
   default     = "echo-server"
-}
-
-variable "project_id" {
-  description = "The ID of the project to assign the resources to"
-  type        = string
-  default     = null
 }
