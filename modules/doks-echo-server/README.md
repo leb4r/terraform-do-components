@@ -39,7 +39,6 @@ No modules.
 | <a name="input_helm_atomic"></a> [helm\_atomic](#input\_helm\_atomic) | If set, installation process purges chart on fail. The wait flag will be set automatically if atomic is used | `bool` | `true` | no |
 | <a name="input_helm_timeout"></a> [helm\_timeout](#input\_helm\_timeout) | Time in seconds to wait for any individual Kubernetes operation | `number` | `600` | no |
 | <a name="input_helm_wait"></a> [helm\_wait](#input\_helm\_wait) | Will wait unitl all resources are in a ready state before marking the release as successful. It will wait as long as `timeout` | `bool` | `true` | no |
-| <a name="input_load_balancer_enabled"></a> [load\_balancer\_enabled](#input\_load\_balancer\_enabled) | Whether or not to configure a load balancer for the service | `bool` | `true` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Kubernetes Namespace to deploy `echo-server` in | `string` | `"echo-server"` | no |
 
 ## Outputs

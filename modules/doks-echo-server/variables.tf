@@ -33,12 +33,6 @@ variable "helm_wait" {
   default     = true
 }
 
-variable "load_balancer_enabled" {
-  description = "Whether or not to configure a load balancer for the service"
-  type        = bool
-  default     = true
-}
-
 variable "namespace" {
   description = "Kubernetes Namespace to deploy `echo-server` in"
   type        = string
