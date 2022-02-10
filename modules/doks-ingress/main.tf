@@ -7,6 +7,11 @@ resource "kubernetes_namespace" "this" {
 
 locals {
   namespace = var.create_namespace ? kubernetes_namespace.this[0].metadata[0].name : var.namespace
+
+  load_balancer_annotations = var.load_balancer_annotations_enabled ? merge(
+    var.load_balancer_id != null ? { "kubernetes.digitalocean.com/load-balancer-id" = var.load_balancer_id } : {},
+    var.load_balancer_name != null ? { "service.beta.kubernetes.io/do-loadbalancer-protocol" = var.load_balancer_name } : {},
+  ) : {}
 }
 
 resource "helm_release" "ingress_nginx" {
@@ -19,6 +24,14 @@ resource "helm_release" "ingress_nginx" {
   atomic  = var.helm_atomic
   wait    = var.helm_wait
   timeout = var.helm_timeout
+
+  values = var.load_balancer_annotations_enabled ? compact([
+    yamlencode({
+      service = {
+        annotations = local.load_balancer_annotations
+      }
+    })
+  ]) : []
 
   set {
     name  = "controller.publishService.enabled"

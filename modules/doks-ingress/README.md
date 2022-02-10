@@ -43,6 +43,9 @@ No modules.
 | <a name="input_helm_atomic"></a> [helm\_atomic](#input\_helm\_atomic) | If set, installation process purges chart on fail. The wait flag will be set automatically if atomic is used | `bool` | `true` | no |
 | <a name="input_helm_timeout"></a> [helm\_timeout](#input\_helm\_timeout) | Time in seconds to wait for any individual Kubernetes operation | `number` | `600` | no |
 | <a name="input_helm_wait"></a> [helm\_wait](#input\_helm\_wait) | Will wait unitl all resources are in a ready state before marking the release as successful. It will wait as long as `timeout` | `bool` | `true` | no |
+| <a name="input_load_balancer_annotations_enabled"></a> [load\_balancer\_annotations\_enabled](#input\_load\_balancer\_annotations\_enabled) | Whether or not to configure a load balancer annotations for the service | `bool` | `false` | no |
+| <a name="input_load_balancer_id"></a> [load\_balancer\_id](#input\_load\_balancer\_id) | ID of the load balancer to assign to the service | `string` | `null` | no |
+| <a name="input_load_balancer_name"></a> [load\_balancer\_name](#input\_load\_balancer\_name) | This setting lets you specify a custom name or to rename an existing DigitalOcean Load Balancer. The name must:<br>Be less than or equal to 255 characters.<br>Start with an alphanumeric character.<br>Consist of alphanumeric characters or the ‘.’ (dot) or ‘-’ (dash) characters, except for the final character which must not be a ‘-’ (dash).<br>If you do not specify a custom name, the load balancer defaults to a name starting with the character a appended by the Service UID. | `string` | `null` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Kubernetes Namespace to deploy `ingress-nginx` in | `string` | `"ingress"` | no |
 
 ## Outputs
