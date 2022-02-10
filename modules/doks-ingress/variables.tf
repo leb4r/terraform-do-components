@@ -1,7 +1,7 @@
 variable "chart_version" {
   description = "The version of the `ingress-nginx` Helm Chart to install"
   type        = string
-  default     = "0.2.0"
+  default     = "4.0.17"
 }
 
 variable "cluster_name" {
