@@ -35,7 +35,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_token"></a> [api\_token](#input\_api\_token) | The DigitalOcean API token `external-dns` will use to manage DNS records, this should be separate from the token used to authenticate with Kubernetes | `string` | n/a | yes |
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | The version of the Helm Chart that installs `external-dns` | `string` | `"6.1.3"` | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | The version of the `external-dns` Helm Chart to install | `string` | `"6.1.3"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Canonical name of DOKS Cluster to deploy kube-prometheus-stack to, used to authenticate | `string` | n/a | yes |
 | <a name="input_create_namespace"></a> [create\_namespace](#input\_create\_namespace) | Set to `false` to use an existing namespace | `bool` | `false` | no |
 | <a name="input_domain_filters"></a> [domain\_filters](#input\_domain\_filters) | A list of DigitalOcean domains for `external-dns` to manage | `list(string)` | `[]` | no |

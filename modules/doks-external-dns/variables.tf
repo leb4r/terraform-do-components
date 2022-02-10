@@ -5,7 +5,7 @@ variable "api_token" {
 }
 
 variable "chart_version" {
-  description = "The version of the Helm Chart that installs `external-dns`"
+  description = "The version of the `external-dns` Helm Chart to install"
   type        = string
   default     = "6.1.3"
 }

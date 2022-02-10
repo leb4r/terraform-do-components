@@ -34,9 +34,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Canonical name of DOKS Cluster to deploy kube-prometheus-stack to, used to fetch authentication data | `string` | n/a | yes |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name of DOKS Cluster to deploy `kube-prometheus-stack` to, used to fetch authentication data | `string` | n/a | yes |
 | <a name="input_create_namespace"></a> [create\_namespace](#input\_create\_namespace) | Set to `false` to use an existing namespace | `bool` | `true` | no |
-| <a name="input_kube_prometheus_stack_chart_version"></a> [kube\_prometheus\_stack\_chart\_version](#input\_kube\_prometheus\_stack\_chart\_version) | The version of the Helm Chart that installs kube-prometheus-stack | `string` | `"19.2.2"` | no |
+| <a name="input_kube_prometheus_stack_chart_version"></a> [kube\_prometheus\_stack\_chart\_version](#input\_kube\_prometheus\_stack\_chart\_version) | The version of the `kube-prometheus-stack` Helm Chart install | `string` | `"19.2.2"` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Kubernetes Namespace to deploy kube-prometheus-stack in | `string` | `"monitoring"` | no |
 
 ## Outputs
