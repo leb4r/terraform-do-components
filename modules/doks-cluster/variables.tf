@@ -50,12 +50,6 @@ variable "default_node_pool" {
   }
 }
 
-variable "min_nodes" {
-  description = "The minimum number of workers in the node pool"
-  type        = number
-  default     = 1
-}
-
 variable "name" {
   description = "The canonical name of the Kubernetes cluster"
   type        = string
