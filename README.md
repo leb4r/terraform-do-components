@@ -2,7 +2,7 @@
 
 [![checkov](https://github.com/leb4r/terraform-do-components/actions/workflows/checkov.yml/badge.svg)](https://github.com/leb4r/terraform-do-components/actions/workflows/checkov.yml) [![pre-commit](https://github.com/leb4r/terraform-do-components/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/leb4r/terraform-do-components/actions/workflows/pre-commit.yml)
 
-Terraform modules that can be re-used in other projects. Built specifically for [DigitalOcean].
+Opinionated Terraform modules that can be re-used in other projects. Built specifically for [DigitalOcean].
 
 ## Usage
 
@@ -10,7 +10,7 @@ Terraform modules that can be re-used in other projects. Built specifically for 
 
 ```hcl
 module "doks_cluster" {
-  source       = "leb4r/components/do//modules/doks-cluster"
+  source       = "leb4r/components/do//modules/doks/cluster"
   version      = "0.1.0"
 
   cluster_name = "example-cluster"

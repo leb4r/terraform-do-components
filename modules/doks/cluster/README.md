@@ -1,4 +1,4 @@
-# Component `doks-cluster`
+# Component `doks/cluster`
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
