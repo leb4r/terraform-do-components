@@ -1,4 +1,4 @@
-# Component: `doks-cluster-monitoring`
+# Component: `doks/monitoring`
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

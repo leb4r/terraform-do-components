@@ -1,4 +1,4 @@
-# Component: `doks-external-dns`
+# Component: `doks/external-dns`
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
