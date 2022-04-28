@@ -28,6 +28,10 @@ resource "helm_release" "ingress_nginx" {
     })
   ]) : []
 
+  # -- Allows customization of the source of the IP address or FQDN to report
+  # in the ingress status field. By default, it reads the information provided
+  # by the service. If disable, the status field reports the IP address of the
+  # node or nodes where an ingress controller pod is running.
   set {
     name  = "controller.publishService.enabled"
     value = "true"
