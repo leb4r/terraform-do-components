@@ -1,5 +1,5 @@
 variable "chart_version" {
-  description = "The version of the Helm Chart that installs kube-prometheus-stack"
+  description = "The version of the `echo-server` Helm Chart to install"
   type        = string
   default     = "0.2.0"
 }
@@ -33,8 +33,8 @@ variable "helm_wait" {
   default     = true
 }
 
-variable "load_balancer_enabled" {
-  description = "Whether or not to configure a load balancer for the service"
+variable "ingress_enabled" {
+  description = "Whether or not to create an Ingress object"
   type        = bool
   default     = true
 }
@@ -43,10 +43,4 @@ variable "namespace" {
   description = "Kubernetes Namespace to deploy `echo-server` in"
   type        = string
   default     = "echo-server"
-}
-
-variable "project_id" {
-  description = "The ID of the project to assign the resources to"
-  type        = string
-  default     = null
 }

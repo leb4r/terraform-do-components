@@ -1,5 +1,5 @@
 variable "cluster_name" {
-  description = "Canonical name of DOKS Cluster to deploy kube-prometheus-stack to, used to fetch authentication data"
+  description = "The name of DOKS Cluster to deploy `kube-prometheus-stack` to, used to fetch authentication data"
   type        = string
 }
 
@@ -16,7 +16,7 @@ variable "namespace" {
 }
 
 variable "kube_prometheus_stack_chart_version" {
-  description = "The version of the Helm Chart that installs kube-prometheus-stack"
+  description = "The version of the `kube-prometheus-stack` Helm Chart install"
   type        = string
   default     = "19.2.2"
 }
