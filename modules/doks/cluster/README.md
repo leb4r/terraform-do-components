@@ -1,4 +1,4 @@
-# Component `doks-cluster`
+# Component `doks/cluster`
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -34,7 +34,6 @@ No modules.
 | <a name="input_default_node_pool"></a> [default\_node\_pool](#input\_default\_node\_pool) | A block representing the cluster's default node pool. Additional node pools may be<br>added to the cluster. The name of the node pool is derived from `name` | <pre>object({<br>    size       = string,<br>    node_count = optional(number),<br>    auto_scale = optional(bool),<br>    min_nodes  = optional(number),<br>    max_nodes  = optional(number),<br>    tags       = optional(list(string)),<br>    labels     = optional(map(string)),<br>  })</pre> | <pre>{<br>  "auto_scale": true,<br>  "max_nodes": 3,<br>  "min_nodes": 1,<br>  "size": "s-2vcpu-2gb"<br>}</pre> | no |
 | <a name="input_ha"></a> [ha](#input\_ha) | Enable/disable the high availability control plane for a cluster.<br>High availability can only be set when creating a cluster. Any update will create a new cluster | `bool` | `false` | no |
 | <a name="input_maintenance_policy"></a> [maintenance\_policy](#input\_maintenance\_policy) | A block representing the cluster's maintenance window.<br>Updates will be applied within this window. `auto_upgrade` must be set to `true` for this to have an effect | <pre>object({<br>    day        = string,<br>    start_time = string,<br>  })</pre> | <pre>{<br>  "day": "sunday",<br>  "start_time": "04:00"<br>}</pre> | no |
-| <a name="input_min_nodes"></a> [min\_nodes](#input\_min\_nodes) | The minimum number of workers in the node pool | `number` | `1` | no |
 | <a name="input_name"></a> [name](#input\_name) | The canonical name of the Kubernetes cluster | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the project to assign the resources to | `string` | `null` | no |
 | <a name="input_region"></a> [region](#input\_region) | The DigitalOcean region to deploy resources to | `string` | `"nyc3"` | no |

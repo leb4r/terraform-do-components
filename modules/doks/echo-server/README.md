@@ -1,4 +1,4 @@
-# Component: `doks-echo-server`
+# Component: `doks/echo-server`
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
