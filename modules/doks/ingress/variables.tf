@@ -9,8 +9,8 @@ variable "cluster_name" {
   type        = string
 }
 
-variable "create_namespace" {
-  description = "Set to `false` to use an existing namespace"
+variable "create_kubernetes_namespace" {
+  description = "Whether or not to create a Kubernetes Namespace specific for the chart"
   type        = bool
   default     = true
 }
@@ -33,8 +33,14 @@ variable "helm_wait" {
   default     = true
 }
 
+variable "kubernetes_namespace" {
+  description = "Kubernetes Namespace to deploy `ingress-nginx` chart in"
+  type        = string
+  default     = "ingress-nginx"
+}
+
 variable "load_balancer_annotations_enabled" {
-  description = "Whether or not to configure a load balancer annotations for the service"
+  description = "Whether or not to configure load balancer annotations for the service"
   type        = bool
   default     = false
 }
@@ -50,15 +56,9 @@ variable "load_balancer_name" {
     This setting lets you specify a custom name or to rename an existing DigitalOcean Load Balancer. The name must:
     Be less than or equal to 255 characters.
     Start with an alphanumeric character.
-    Consist of alphanumeric characters or the ‘.’ (dot) or ‘-’ (dash) characters, except for the final character which must not be a ‘-’ (dash).
+    Consist of alphanumeric characters or the `.` (dot) or `-` (dash) characters, except for the final character which must not be a `-` (dash).
     If you do not specify a custom name, the load balancer defaults to a name starting with the character a appended by the Service UID.
   EOT
   type        = string
   default     = null
-}
-
-variable "namespace" {
-  description = "Kubernetes Namespace to deploy `ingress-nginx` in"
-  type        = string
-  default     = "ingress"
 }
